@@ -38,8 +38,8 @@ def lucasU_Qeq_minusP(P, n, k):
     return e
 
 
-# Test Lucas-Mehaye : U(n-1) = 1 et U(n+1) = 0 (mod n)
-def test_lucas-Mehaye(n, P):
+# Test Lucas_Mehaye : U(n-1) = 1 et U(n+1) = 0 (mod n)
+def test_lucas_Mehaye(n, P):
     u_nm1 = lucasU_Qeq_minusP(P, n, n - 1) % n
     u_np1 = lucasU_Qeq_minusP(P, n, n + 1) % n
     ok = (u_nm1 == 1) and (u_np1 == 0)
@@ -99,10 +99,10 @@ if not suites:
 else:
     for P in suites:
         print(f"\nSuite de Lucas (P,Q)=({P},{-P})")
-        ok, u_nm1, u_np1 = test_lucas-Mehaye(n, P)
+        ok, u_nm1, u_np1 = test_lucas_Mehaye(n, P)
         print("  U(n-1) mod n :", u_nm1)
         print("  U(n+1) mod n :", u_np1)
-        print("  Lucas-Mehaye :", "OUI" if ok else "NON")
+        print("  Lucas_Mehaye :", "OUI" if ok else "NON")
         if ok:
             break
 
